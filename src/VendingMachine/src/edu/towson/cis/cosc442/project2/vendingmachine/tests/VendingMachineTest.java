@@ -60,29 +60,7 @@ public class VendingMachineTest {
 		assertNull(vendingMachine.getItem("A"));
 	}
 
-	/**
-	 * Tests that an exception is returned when an item is added to an invalid spot
-	 *
-	@Test (expected = VendingMachineException.class)
-	public void testRemoveItemFromInvalidSpot() {
-		vendingMachine.removeItem("X");
-	}
-
-	/**
-	 * Tests that an exception is thrown when an item is attempted to be removed
-	 * from an empty spot
-	 
-	@Test(expected = VendingMachineException.class)
-	public void testRemoveItemFromUnasignedSpot() {
-		vendingMachine.removeItem("B");
-	}
-
-	*/
-	
-
-	
-	
-	/**
+		/**
 	 * Tests that money is inserted corrected
 	 */
 	@Test
@@ -162,15 +140,7 @@ public class VendingMachineTest {
 		assertEquals(0, vendingMachine.getBalance(), 0.001);
 	}
 	
-	/**
-	 * Test that an exception is returned when an item is entered on a taken place
-	 
-	@Test(expected = VendingMachineException.class)
-	public void testAddItemOnTakenPlace() {
-		vendingMachine.addItem(new VendingMachineItem("COCACOLA", 9.99), "A");
-		
-	}
-	*/
+	
 	/**
 	 * Tests that an exception is thrown when two items are attempted to be removed
 	 * from the same spot
@@ -181,6 +151,34 @@ public class VendingMachineTest {
 	    vendingMachine.removeItem("A");
 	    vendingMachine.removeItem("D");
 	}
+	/**
+	 * Tests that an exception is returned when an item is added to an invalid spot
+	 *
+	@Test (expected = VendingMachineException.class)
+	public void testRemoveItemFromInvalidSpot() {
+		vendingMachine.removeItem("X");
+	}
+
+	/**
+	 * Tests that an exception is thrown when an item is attempted to be removed
+	 * from an empty spot
+	 
+	@Test(expected = VendingMachineException.class)
+	public void testRemoveItemFromUnasignedSpot() {
+		vendingMachine.removeItem("B");
+	}
+
+	*/
+	/**
+	 * Test that an exception is returned when an item is entered on a taken place
+	 
+	@Test(expected = VendingMachineException.class)
+	public void testAddItemOnTakenPlace() {
+		vendingMachine.addItem(new VendingMachineItem("COCACOLA", 9.99), "A");
+		
+	}
+	*/
+	
 
 	
 

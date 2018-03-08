@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Rectangle.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Project_3 (Mar 8, 2018 12:36:04 AM)</a> &gt; <a href="../../index.html" class="el_group">Project_3</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Rectangle.src.edu.towson.cis.cosc442.project2.rectangle</a> &gt; <span class="el_source">Rectangle.java</span></div><h1>Rectangle.java</h1><pre class="source lang-java linenums">package Rectangle.src.edu.towson.cis.cosc442.project2.rectangle;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Rectangle.
+ */
+public class Rectangle {
+
+	/** The p2. */
+	private Point p1, p2;
+
+	/**
+	 * Instantiates a new rectangle.
+	 *
+	 * @param p1
+	 *            the p1
+	 * @param p2
+	 *            the p2
+	 */
+<span class="fc" id="L20">	Rectangle(Point p1, Point p2) {</span>
+<span class="fc" id="L21">		this.p1 = p1;</span>
+<span class="fc" id="L22">		this.p2 = p2;</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Gets the area.
+	 *
+	 * @return the area
+	 */
+	public Double getArea() {
+<span class="fc" id="L31">		return Math.abs((p2.x - p1.x) * (p2.y - p1.y));</span>
+	}
+
+	/**
+	 * Gets the diagonal.
+	 *
+	 * @return the diagonal
+	 */
+	public Double getDiagonal() {
+<span class="fc" id="L40">		return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Project_3 (Mar 8, 2018 12:36:04 AM)</div></body></html>

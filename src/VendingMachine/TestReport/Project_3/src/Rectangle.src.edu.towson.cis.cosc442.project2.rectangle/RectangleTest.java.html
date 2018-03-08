@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RectangleTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Project_3 (Mar 8, 2018 12:36:04 AM)</a> &gt; <a href="../../index.html" class="el_group">Project_3</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Rectangle.src.edu.towson.cis.cosc442.project2.rectangle</a> &gt; <span class="el_source">RectangleTest.java</span></div><h1>RectangleTest.java</h1><pre class="source lang-java linenums">package Rectangle.src.edu.towson.cis.cosc442.project2.rectangle;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The unit test Class for Rectangle.
+ */
+<span class="fc" id="L12">public class RectangleTest {</span>
+
+	/** Declaring necessary test objects for {@link Rectangle} */
+	Rectangle rect1, rect2;
+
+	/**
+	 * Initializes the necessary test objects for the test cases to use.
+	 *
+	 * @throws Exception
+	 *             the exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L25">		rect1 = new Rectangle(new Point(2.0, 2.0), new Point(4.0, 7.0));</span>
+<span class="fc" id="L26">		rect2 = new Rectangle(new Point(2.0, 6.0), new Point(4.0, 3.0));</span>
+<span class="fc" id="L27">	}</span>
+
+	/**
+	 * Test(S) for the getArea() method of the {@link Rectangle} class.
+	 */
+	@Test
+	public void testGetArea1() {
+<span class="fc" id="L34">		assertEquals(10.0, rect1.getArea(), 0.001);</span>
+
+<span class="fc" id="L36">	}</span>
+
+	@Test
+	public void testGetArea2() {
+<span class="fc" id="L40">		assertEquals(6, rect2.getArea(), 0.001);</span>
+<span class="fc" id="L41">	}</span>
+
+	/**
+	 * Test(S) for the getDiagonal() method of the {@link Rectangle} class.
+	 */
+	@Test
+	public void testGetDiagonal1() {
+<span class="fc" id="L48">		assertEquals(5.3852, rect1.getDiagonal(), 0.0001);</span>
+
+<span class="fc" id="L50">	}</span>
+
+	@Test
+	public void testGetDiagonal2() {
+<span class="fc" id="L54">		assertEquals(3.6055, rect2.getDiagonal(), 0.0001);</span>
+<span class="fc" id="L55">	}</span>
+
+	/**
+	 * Cleans up test objects after a test case is executed.
+	 */
+	@After
+	public void tearDown() {
+<span class="fc" id="L62">		rect1 = null;</span>
+<span class="fc" id="L63">		rect2 = null;</span>
+<span class="fc" id="L64">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>Project_3 (Mar 8, 2018 12:36:04 AM)</div></body></html>
