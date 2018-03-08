@@ -1,0 +1,9 @@
+Bug #1: getBalance() Should have a way to ensure the initial balance is 0; otherwise or higher, otherwise throw a VendingMachineException.
+
+Bug #2: makePurchase() Should have a way to ensure the initial balance is 0 or higher, otherwise throw a VendingMachineException.
+
+Bug #3: returnchange() Should have a way to ensure the initial balance is 0 or higher, otherwise throw a VendingMachineException.
+
+Bug #4: makePurchase() Should throw a VendingMachineException if the item selected is incorrect or if the balance is not enough.
+
+Bug #5: getPrice() should throw a VendingMachineException if the item selected is incorrected aka non-existant.
