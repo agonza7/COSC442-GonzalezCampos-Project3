@@ -41,13 +41,26 @@ public class VendingMachineItemTest {
 
 	/**
 	 * Test to see if an item with a negative price cannot be created.
-	 */
+	 *
 
-	@Test(expected = VendingMachineException.class)
-	public final void testVendingMachineItemNegativePrice() {
-		vendingMachineItem = new VendingMachineItem("Crush", -1.50);
+	@Test (expected = VendingMachineException.class)
+	public final void testVendingMachineItemInvalidPrice() {
+		vendingMachineItem = new VendingMachineItem("Crush", -1.50);	
+		
 	}
 
+	/*
+	@Test (expected = VendingMachineException.class)
+	public final void testVendingMachineZeroPrice() {
+		vendingMachineItem = new VendingMachineItem("Purple", 0.0);
+	}*/
+	
+	@Test
+	public final void testSetPrice() {
+		vendingMachineItem = new VendingMachineItem("Coke", 2.50);
+		assertEquals(2.50, vendingMachineItem.getPrice(), 0.001);
+	}
+	
 	/**
 	 * Test to see if proper name is returned from item.
 	 */
@@ -69,6 +82,7 @@ public class VendingMachineItemTest {
 	 */
 	@Test
 	public final void testGetPrice() {
+		vendingMachineItem = new VendingMachineItem("Stuff",10.0);
 		assertEquals(10.0, vendingMachineItem.getPrice(), 0.01);
 	}
 }

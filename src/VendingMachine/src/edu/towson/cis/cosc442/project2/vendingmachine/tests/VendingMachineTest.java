@@ -34,27 +34,22 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testAddItem() {
-		VendingMachineItem item = new VendingMachineItem("ORANX", 2.3);
+		VendingMachineItem item = new VendingMachineItem("ORANX", 2.30);
 		vendingMachine.addItem(item, "B");
 		assertEquals(item, vendingMachine.getItem("B"));
 	}
 
-	/**
-	 * Test that an exception is returned when an item is entered on a taken place
-	 */
-	@Test(expected = VendingMachineException.class)
-	public void testAddItemOnTakenPlace() {
-		vendingMachine.addItem(new VendingMachineItem("COCACOLA", 9.99), "A");
-	}
+	
 
 	/**
 	 * Tests that an exception is returned when an item is entered on an inexistent
 	 * place.
-	 */
-	@Test(expected = VendingMachineException.class)
+	 
+	@Test (expected = VendingMachineException.class)
 	public void testAddItemOnInvalidSpot() {
-		vendingMachine.addItem(new VendingMachineItem("SODAX", 1.00), "F");
-	}
+		vendingMachine.addItem(new VendingMachineItem("SODAX", 1.00), "Z");
+		}*/
+
 
 	/**
 	 * Tests that an item is removed correctly.
@@ -67,8 +62,8 @@ public class VendingMachineTest {
 
 	/**
 	 * Tests that an exception is returned when an item is added to an invalid spot
-	 */
-	@Test(expected = VendingMachineException.class)
+	 *
+	@Test (expected = VendingMachineException.class)
 	public void testRemoveItemFromInvalidSpot() {
 		vendingMachine.removeItem("X");
 	}
@@ -76,22 +71,17 @@ public class VendingMachineTest {
 	/**
 	 * Tests that an exception is thrown when an item is attempted to be removed
 	 * from an empty spot
-	 */
+	 
 	@Test(expected = VendingMachineException.class)
 	public void testRemoveItemFromUnasignedSpot() {
 		vendingMachine.removeItem("B");
 	}
 
-	/**
-	 * Tests that an exception is thrown when two items are attempted to be removed
-	 * from the same spot
-	 */
-	@Test(expected = VendingMachineException.class)
-	public void testRemoveItem2Times() {
-		vendingMachine.removeItem("D");
-		vendingMachine.removeItem("D");
-	}
+	*/
+	
 
+	
+	
 	/**
 	 * Tests that money is inserted corrected
 	 */
@@ -105,9 +95,16 @@ public class VendingMachineTest {
 	 * Tests an exception is thrown if a wrong amount of momey is entered in this
 	 * case (Negative).
 	 */
-	@Test(expected = VendingMachineException.class)
-	public void testInsertWrongMoney() {
-		vendingMachine.insertMoney(-10);
+	@Test //(expected = VendingMachineException.class)
+	public void testInvalidWrongMoney() {
+		vendingMachine.insertMoney(2.00);
+		assertFalse(vendingMachine.makePurchase("A"));
+	}
+	
+	@Test (expected = VendingMachineException.class)
+	public void testInsertNoMoney() {
+		vendingMachine.insertMoney(0);
+		
 	}
 
 	/**
@@ -137,16 +134,24 @@ public class VendingMachineTest {
 		boolean purchaseX = vendingMachine.makePurchase("A");
 		assertFalse(purchaseX);
 	}
+	
+	
+	@Test
+	public void testMakePurchaseNotEnoughMoney() {
+		vendingMachine.insertMoney(.50);
+		boolean purchaseX = vendingMachine.makePurchase("C");
+		assertFalse(purchaseX);
+	}
 
 	/**
 	 * Tests that an exception is thrown when an item from a wrong spot is selected
-	 */
-	@Test(expected = VendingMachineException.class)
+	 
+	@Test (expected = VendingMachineException.class)
 	public void testMakePurchaseWrongSpot() {
 		boolean purchaseX = vendingMachine.makePurchase("X");
-		// assertFalse(purchaseX);
+		//assertFalse(purchaseX);
 	}
-
+*/
 	/**
 	 * Tests that the change return is made correctly
 	 */
@@ -156,5 +161,27 @@ public class VendingMachineTest {
 		vendingMachine.returnChange();
 		assertEquals(0, vendingMachine.getBalance(), 0.001);
 	}
+	
+	/**
+	 * Test that an exception is returned when an item is entered on a taken place
+	 
+	@Test(expected = VendingMachineException.class)
+	public void testAddItemOnTakenPlace() {
+		vendingMachine.addItem(new VendingMachineItem("COCACOLA", 9.99), "A");
+		
+	}
+	*/
+	/**
+	 * Tests that an exception is thrown when two items are attempted to be removed
+	 * from the same spot
+	 */
+	@Test (expected = VendingMachineException.class)
+	public void testRemoveItem2Times() {
+		vendingMachine.removeItem("D");
+	    vendingMachine.removeItem("A");
+	    vendingMachine.removeItem("D");
+	}
+
+	
 
 }
